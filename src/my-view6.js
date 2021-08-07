@@ -8,11 +8,10 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import './shared-styles.js';
 
-class MyView404 extends PolymerElement {
+class MyView6 extends PolymerElement {
   static get template() {
     return html`
       <style include="shared-styles">
@@ -24,11 +23,13 @@ class MyView404 extends PolymerElement {
       </style>
 
       <div class="card">
-      <h1>Error 404</h1>
-      <h3>Oops you hit a 404. Head back to <a href="[[rootPath]]">home</a>.</h3>
-      </div>
+<h1>Contact Us</h1>
+<p>Use this form to reach out to us regarding your questions and concerns. For reporting purposes and data subject requests, please use our <a href="./view5">DSAR</a> form.</p>
+<iframe src="https://www.cognitoforms.com/f/YtcYQljz2kStKCpk9voQJw?id=1" style="position:relative;width:1px;min-width:100%;*width:100%;" frameborder="0" scrolling="yes" seamless="seamless" height="1042" width="100%"></iframe>
+<script src="https://www.cognitoforms.com/scripts/embed.js"></script>
+</div>
     `;
   }
 }
 
-window.customElements.define('my-view404', MyView404);
+window.customElements.define('my-view6', MyView6);

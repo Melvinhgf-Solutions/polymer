@@ -39,7 +39,7 @@ class MyApp extends PolymerElement {
     return html`
       <style>
         :host {
-          --app-primary-color: #4285f4;
+          --app-primary-color: #288dbf;
           --app-secondary-color: black;
 
           display: block;
@@ -58,6 +58,12 @@ class MyApp extends PolymerElement {
           --paper-icon-button-ink-color: white;
         }
 
+        app-header app-toolbar a {
+          text-decoration: none;
+          color: #fff;
+          font-weight: bold;
+        }
+      
         .drawer-list {
           margin: 0 20px;
         }
@@ -71,7 +77,7 @@ class MyApp extends PolymerElement {
         }
 
         .drawer-list a.iron-selected {
-          color: black;
+          color: var(--app-primary-color);
           font-weight: bold;
         }
       </style>
@@ -90,16 +96,23 @@ class MyApp extends PolymerElement {
       <app-drawer-layout fullbleed="" narrow="{{narrow}}">
         <!-- Drawer content -->
         <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
-          <app-toolbar>Menu</app-toolbar>
+          <app-toolbar><a href="https://melvinhgf.business.site" target="_blank" text-decoration="none"><img src = "https://res.cloudinary.com/melvinhgf-net-solutions/image/upload/c_thumb,w_200,g_face/v1474616440/brand-logo-hori.jpg"</img></a></app-toolbar>
           <iron-selector
             selected="[[page]]"
             attr-for-selected="name"
             class="drawer-list"
             role="navigation"
           >
-            <a name="view1" href="[[rootPath]]view1">View One</a>
-            <a name="view2" href="[[rootPath]]view2">View Two</a>
-            <a name="view3" href="[[rootPath]]view3">View Three</a>
+            <a name="view1" href="[[rootPath]]view1">Privacy</a>
+            <a name="view2" href="[[rootPath]]view2">Cookie</a>
+            <a name="view3" href="[[rootPath]]view3">Terms & Conditions</a>
+            <a name="view4" href="[[rootPath]]view4">Acceptable Use</a>
+            <a name="view7" href="[[rootPath]]view7">End-User Agreement</a>
+            <a name="view8" href="[[rootPath]]view8">Refunds</a>
+            <a name="view9" href="[[rootPath]]view9">Disclaimer</a>
+            <a id="dunsellbutton" name="view5" href="[[rootPath]]view5">Do Not Sell My Data</a>
+            <br>
+            <a id="view6" name="view6" href="[[rootPath]]view6">Contact Us</a>
           </iron-selector>
         </app-drawer>
 
@@ -111,7 +124,7 @@ class MyApp extends PolymerElement {
                 icon="my-icons:menu"
                 drawer-toggle=""
               ></paper-icon-button>
-              <div main-title="">My App</div>
+              <div main-title=""><a href="[[rootPath]]" text-decoration="none" font-weight="bold">LEGAL DOCUMENTATION</a></div>
             </app-toolbar>
           </app-header>
 
@@ -119,6 +132,12 @@ class MyApp extends PolymerElement {
             <my-view1 name="view1"></my-view1>
             <my-view2 name="view2"></my-view2>
             <my-view3 name="view3"></my-view3>
+            <my-view4 name="view4"></my-view4>
+            <my-view7 name="view7"></my-view7>
+            <my-view8 name="view8"></my-view8>
+            <my-view9 name="view9"></my-view9>
+            <my-view5 name="view5"></my-view5>
+            <my-view6 name="view6"></my-view6>
             <my-view404 name="view404"></my-view404>
           </iron-pages>
         </app-header-layout>
@@ -149,7 +168,7 @@ class MyApp extends PolymerElement {
     // Show 'view1' in that case. And if the page doesn't exist, show 'view404'.
     if (!page) {
       this.page = 'view1';
-    } else if (['view1', 'view2', 'view3'].indexOf(page) !== -1) {
+    } else if (['view1', 'view2', 'view3', 'view4', 'view5', 'view6', 'view7', 'view8', 'view9'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'view404';
@@ -175,6 +194,24 @@ class MyApp extends PolymerElement {
         break;
       case 'view3':
         import('./my-view3.js');
+        break;
+      case 'view4':
+        import('./my-view4.js');
+        break;
+      case 'view5':
+        import('./my-view5.js');
+        break;
+      case 'view6':
+        import('./my-view6.js');
+        break;
+      case 'view7':
+        import('./my-view7.js');
+        break;
+      case 'view8':
+        import('./my-view8.js');
+        break;
+      case 'view9':
+        import('./my-view9.js');
         break;
       case 'view404':
         import('./my-view404.js');

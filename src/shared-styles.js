@@ -36,10 +36,31 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       }
 
       h1 {
-        margin: 16px 0;
-        color: #212121;
+        color: #288dbf;
         font-size: 22px;
       }
+      
+      h2 {
+        color: #288dbf;
+        font-size: 18px;
+      }
+      
+      h3 {
+        font-size: 16px;
+      }
+      
+      a {
+        color: #288dbf;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      
+      a .selected {
+        color: #288dbf;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      
     </style>
   </template>
 </dom-module>`;
